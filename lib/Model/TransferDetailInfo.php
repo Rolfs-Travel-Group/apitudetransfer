@@ -58,9 +58,11 @@ class TransferDetailInfo implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'description' => 'string',
-'id' => 'string',
-'name' => 'string',
-'type' => 'string'    ];
+        'id' => 'string',
+        'name' => 'string',
+        'type' => 'string',
+        'value' => 'string'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -69,9 +71,11 @@ class TransferDetailInfo implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'description' => null,
-'id' => null,
-'name' => null,
-'type' => null    ];
+        'id' => null,
+        'name' => null,
+        'type' => null,
+        'value' => null
+    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -101,9 +105,11 @@ class TransferDetailInfo implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'description' => 'description',
-'id' => 'id',
-'name' => 'name',
-'type' => 'type'    ];
+        'id' => 'id',
+        'name' => 'name',
+        'type' => 'type',
+        'value' => 'value'
+    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -112,9 +118,11 @@ class TransferDetailInfo implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'description' => 'setDescription',
-'id' => 'setId',
-'name' => 'setName',
-'type' => 'setType'    ];
+        'id' => 'setId',
+        'name' => 'setName',
+        'type' => 'setType',
+        'value' => 'setValue'
+    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -123,9 +131,11 @@ class TransferDetailInfo implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'description' => 'getDescription',
-'id' => 'getId',
-'name' => 'getName',
-'type' => 'getType'    ];
+        'id' => 'getId',
+        'name' => 'getName',
+        'type' => 'getType',
+        'value' => 'getValue'
+    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -202,6 +212,7 @@ self::TYPE_GENERIC_GUIDELINES,        ];
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['value'] = isset($data['value']) ? $data['value'] : null;
     }
 
     /**
@@ -352,6 +363,31 @@ self::TYPE_GENERIC_GUIDELINES,        ];
 
         return $this;
     }
+
+    /**
+     * Sets value
+     *
+     * @param string $name Value
+     *
+     * @return $this
+     */
+    public function setValue($value): static
+    {
+        $this->container['value'] = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets value
+     *
+     * @return ?string
+     */
+    public function getValue(): ?string
+    {
+        return $this->container['value'];
+    }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
